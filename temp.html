@@ -1,0 +1,129 @@
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Animal', 'Count'],
+          ['고라니', 16694], ['너구리', 4323], ['멧토끼', 1304],
+          ['멧돼지', 401], ['오소리', 346], ['족제비', 299],
+          ['삵', 253], ['노루', 219], ['개', 43], ['기타', 40],
+          ['고양이', 32], ['수달', 17],
+          ['미상', 17], ['사슴', 12], ['꿩', 10],
+        ]);
+
+        var options = {
+          title: '고속도로 로드킬 동물 비율',
+          'width':'100%',
+          'height':500,
+          legend: {position: 'top'},
+          pieSliceText: 'label',
+          slices: {  0: {color:'#DE3163',offset: 0.2}, 1: {color:'#FF7F50'}, 2: {color:'#FFBF00'},
+                    3: {color:'#DFFF00'}, 4: {color:'#9FE2BF'}, 5: {color:'#40E0D0'}, 6: {color:'#6495ED'}
+          },
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+        chart.draw(data, options);
+        window.addEventListener('resize',chart_div1,false)
+      }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      var data = google.visualization.arrayToDataTable([
+            ['Year', '로드킬수', '개체수'],
+            ['2015', 1466, 900],
+            ['2016', 1009, 1821],
+            ['2017',  674, 3100],
+            ['2018', 501, 3666],
+            //['2019', 437, null]
+          ]);
+
+      var options = {'title':'고라니 로드킬 수 및 개체 수',
+                     'width':'100%',
+                     'height':500,
+                     colors: ['FC618E', '#6495ED'],
+                     vAxis: {
+                 viewWindow: {
+                     min: 0,
+                     max: 4000
+                 },
+                 ticks: [500,1000,1500,2000,2500,3000,3500,4000],
+
+           },
+
+                   };
+
+       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+      chart.draw(data, options);
+      window.addEventListener('resize',chart_div2,false)
+    }
+    </script>
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['corechart']});
+
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      var data = google.visualization.arrayToDataTable([
+            ['노선', '고라니 사고수', '전체 사고수'],
+            ['중부내륙선의 지선',      1,1],
+            ['중부내륙선'     ,     1,1],
+            ['무안광주선'      ,    1,1],
+            ['익산장수선'       ,   1,1],
+            ['광주대구선'        ,  2,3],
+            ['남해선(순천부산)'     , 2,3],
+            ['고창담양선'        ,  5,6],
+            ['남해선(영암순천)'     , 5,5],
+            ['서울양양선'         , 6,7],
+            ['동해선  '         , 8,10],
+            ['대전남부순환선'       ,13,15],
+            ['논산천안선/호남선'     ,17,22],
+            ['대구포항선'    ,     27,29],
+            ['순천완주선'     ,    28,36],
+            ['경부선'        ,   30,35],
+            ['통영대전선/중부선'    , 39,45],
+            ['서해안선'         , 44,45],
+            ['서천공주선'        , 52,68],
+            ['중앙선'          , 82,100],
+            ['당진대전선'        ,137, 151]
+          ]);
+
+      var options = {'title':'노선별 고라니 사고 수',
+                     'width':'100%',
+                     'height':700,
+                    colors: ['#FC618E', '#B05CF6'],
+                     series : {1 : {type : 'line'}}};
+
+      var chart = new google.visualization.BarChart(document.getElementById("chart_div3"));
+
+      chart.draw(data, options);
+      window.addEventListener('resize',chart_div3,false)
+    }
+    </script>
+
+  </head>
+
+  <body>
+
+<div align=center>Data Visualization Assignment 5</div>
+    <div id="chart_div1"></div>
+    <div id="chart_div2"></div>
+    <div id="chart_div3"></div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['corechart']});
+
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      var data = google.visualization.arrayToDataTable([
+            ['노선', '고라니 사고수', '전체 사고수'],
+            ['중부내륙선의 지선',      1,1],
+            ['중부내륙선'     ,     1,1],
+            ['무안광주선'      ,    1,1],
+            ['익산장수선'       ,   1,1],
+            ['광주대구선'        ,  2,3],
+            ['남해선(순천부산)'     , 2,3],
+            ['고창담양선'        ,  5,6],
+            ['남해선(영암순천)'     , 5,5],
+            ['서울양양선'         , 6,7],
+            ['동해선  '         , 8,10],
+            ['대전남부순환선'       ,13,15],
+            ['논산천안선/호남선'     ,17,22],
+            ['대구포항선'    ,     27,29],
+            ['순천완주선'     ,    28,36],
+            ['경부선'        ,   30,35],
+            ['통영대전선/중부선'    , 39,45],
+            ['서해안선'         , 44,45],
+            ['서천공주선'        , 52,68],
+            ['중앙선'          , 82,100],
+            ['당진대전선'        ,137, 151]
+          ]);
+
+      var options = {'title':'노선별 고라니 사고 수',
+                     'width':'100%',
+                     'height':700,
+                    colors: ['#FC618E', '#B05CF6'],
+                     series : {1 : {type : 'line'}}};
+
+      var chart = new google.visualization.BarChart(document.getElementById("chart_div3"));
+
+      chart.draw(data, options);
+      window.addEventListener('resize',chart_div3,false)
+    }
+    </script>
+
+
+  </head>
+
+  <body>
+    <div id="chart_div3"></div>
+  </body>
+</html>
