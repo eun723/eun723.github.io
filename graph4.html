@@ -92,7 +92,7 @@
       //     .text(function(d) { return d.properties.name; })
     });
 
-    d3.csv("roadkill.CSV", function(data) {
+    d3.csv("roadkill.csv", function(data) {
       places.selectAll("circle")
           .data(data)
         .enter().append("circle")
