@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Animal', 'Count'],
+          ['고라니', 16694], ['너구리', 4323], ['멧토끼', 1304],
+          ['멧돼지', 401], ['오소리', 346], ['족제비', 299],
+          ['삵', 253], ['노루', 219], ['개', 43], ['기타', 40],
+          ['고양이', 32], ['수달', 17],
+          ['미상', 17], ['사슴', 12], ['꿩', 10],
+        ]);
+
+        var options = {
+          title: '고속도로 로드킬 동물 비율',
+          'width':'100%',
+          'height':500,
+          legend: {position: 'top'},
+          pieSliceText: 'label',
+          slices: {  0: {color:'#DE3163',offset: 0.2}, 1: {color:'#FF7F50'}, 2: {color:'#FFBF00'},
+                    3: {color:'#DFFF00'}, 4: {color:'#9FE2BF'}, 5: {color:'#40E0D0'}, 6: {color:'#6495ED'}
+          },
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+        chart.draw(data, options);
+        window.addEventListener('resize',chart_div1,false)
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <div id="chart_div1"></div>
+  </body>
+</html>
