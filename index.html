@@ -1,7 +1,69 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Data Visualization</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<style type="text/css">
+@font-face {font-family:"NanumBarunGothic"; src:url('NanumBarunGothic.otf');}
+
+.flex-container {display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; flex-flow: row wrap;}
+.flex-container > * {padding: 15px; -webkit-flex: 100%; flex: 100%;}
+
+header {background-color:#CC3050;color:white;font-family:"NanumBarunGothic";}
+
+.nav {width:70px; height: 750px; background-color:#F6F6F6; float:center; text-align:center;}
+.nav ul {list-style-type: none; padding: 0; font-size:10px; color:#5A7CC0;}
+.nav ul a {text-decoration: none; font-size:17px;font-family:"NanumBarunGothic";color: #000000;}
+.nav ul a:hover {color:#FFCBCB;}
+.nav li a{display:block; padding:20px; margin:10; text-align:center;}
+
+.article {text-align: left;}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+P {font-family:"NanumBarunGothic";}
+h1 {font-size:50px; color:white;font-family:"NanumBarunGothic";}
+a {text-decoration: none;}
+</style>
+
+<div class="flex-container">
+<header id="bg">
+  <center><a href="gorani.html" target="main_area" title="home"><h1>Data Visualization #5 <br></h1></a></center>
+  <center><p>데이터 사이언스 17011727 김은</p></center>
+</header>
+
+<script type = "text/javascript">
+    function changeColor(color) {
+       document.getElementById("bg").style.background= color;
+       document.getElementById("bg2").style.background= color;
+    }
+</script>
+
+<nav class="nav">
+<ul>
+
+  <li><a href="Hypothesis.html" target="main_area" title="click">로드킬 분석<br></a></li>
+  <li><a href="graph1.html" target="main_area" title="click">Step 1)<br>고속도로 로드킬 동물 비율<br></a></li>
+  <li><a href="graph2.html" target="main_area" title="click">Step 2)<br>고라니 로드킬 수 및 개체 수<br></a></li>
+  <li><a href="graph3.html" target="main_area" title="click">Step 3)<br>노선별 사고수<br></a></li>
+  <li><a href="graph4.html" target="main_area" title="click">Step 4)<br>로드킬 발생 구역 및 생태 통로 설치 구역<br></a></li>
+  <li><a href="graph5.html" target="main_area" title="click">Step 5-1)<br>개체별 고라니 서식지<br></a></li>
+  <li><a href="graph5_1.html" target="main_area" title="click">Step 5-2)<br>지역별 고라니 서식지<br></a></li>
+  <li><a href="graph6-1.html" target="main_area" title="click">Step 6)<br>고속도로 노선</a></li>
+  <li><a href="graph6-2.html" target="main_area" title="click">고라니 사고 다발 노선</a></li>
+</ul>
+</nav>
+
+<article class="article">
+<iframe name="main_area" src="Hypothesis.html" width="1500px" height="750px" style="border:none"></iframe>
+</article>
+
+
+</div>
+
 </body>
 </html>
